@@ -54,4 +54,4 @@ VOLUME \
     /config \
     /downloads
     
-CMD [ "/AriaNg", "--port", "80" ]
+CMD [ "/AriaNg", "--port", "6880" ]
