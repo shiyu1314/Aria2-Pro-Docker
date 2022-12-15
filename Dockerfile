@@ -53,5 +53,3 @@ EXPOSE \
 VOLUME \
     /config \
     /downloads
-    
-CMD [ "/AriaNg", "--port", "6880" ]
