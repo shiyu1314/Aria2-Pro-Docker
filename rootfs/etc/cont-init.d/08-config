@@ -14,8 +14,6 @@
 
 . /etc/init-base
 
-darkhttpd /AriaNg --port 6880 &
-
 mkdir -p ${ARIA2_CONF_DIR} ${SCRIPT_DIR} ${DOWNLOAD_DIR}
 
 PROFILES="
