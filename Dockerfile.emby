@@ -1,11 +1,10 @@
 FROM emby/embyserver_arm32v7
 
 COPY emby.sh /emby.sh
-
-    
+  
 RUN cd / \
 	&& chmod a+x emby.sh \
-	&& bash emby.sh
+	&& sh emby.sh
     
 CMD ["sh"]
 ENV LANG=en_US.UTF-8 \
