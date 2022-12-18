@@ -1,4 +1,15 @@
 FROM emby/embyserver_arm32v7
+
+COPY emby.sh /emby.sh
+
+
+RUN apk add --no-cache --update bash && \
+    rm -rf /var/cache/apk/* /tmp/*
+    
+RUN cd / \
+	&& chmod a+x emby.sh \
+	&& bash emby.sh
+    
 CMD ["sh"]
 ENV LANG=en_US.UTF-8 \
         HOME=/tmp \
@@ -13,10 +24,7 @@ ENV LANG=en_US.UTF-8 \
         GIDLIST=2 \
         NVIDIA_VISIBLE_DEVICES=all \
         NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
-        XDG_CACHE_HOME=/config/cache \
-RUN cd / \
-	&& chmod a+x install.sh \
-	&& bash install.sh 
+        XDG_CACHE_HOME=/config/cache \ 
 
 VOLUME ["/config"]
 EXPOSE \
