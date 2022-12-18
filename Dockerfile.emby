@@ -14,13 +14,9 @@ ENV LANG=en_US.UTF-8 \
         NVIDIA_VISIBLE_DEVICES=all \
         NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
         XDG_CACHE_HOME=/config/cache \
-RUN python_ver=$(python3 -V | awk '{print $2}') \
-    && echo "${WORKDIR}/" > /usr/lib/python${python_ver%.*}/site-packages/nas-tools.pth \
-    && echo 'fs.inotify.max_user_watches=524288' >> /etc/sysctl.conf \
-    && echo 'fs.inotify.max_user_instances=524288' >> /etc/sysctl.conf \
-    && git config --global pull.ff only \
-    && git clone -b master ${REPO_URL} ${WORKDIR} --recurse-submodule \
-    && git config --global --add safe.directory ${WORKDIR}
+RUN cd / \
+	&& chmod a+x install.sh \
+	&& bash install.sh 
 
 VOLUME ["/config"]
 EXPOSE \
