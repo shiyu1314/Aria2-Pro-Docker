@@ -1,4 +1,3 @@
 FROM emby/embyserver_arm32v7
 RUN rm -rf /system/plugins/*
-ADD https://github.com/shiyu1314/Aria2-Pro-Docker/releases/download/4.7.11.0/system.zip /tmp
-ADD /tmp/system.zip /
+ADD https://github.com/shiyu1314/Aria2-Pro-Docker/releases/download/4.7.11.0/system.tar /
