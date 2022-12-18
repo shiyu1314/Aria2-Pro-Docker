@@ -1,6 +1,10 @@
 FROM emby/embyserver_arm32v7
 
 COPY emby.sh /emby.sh
+
+RUN apk add --no-cache --update bash && \
+    apk add --no-cache jq findutils && \
+    apk add --no-cache ca-certificates curl && \
   
 RUN cd / \
 	&& chmod a+x emby.sh \
