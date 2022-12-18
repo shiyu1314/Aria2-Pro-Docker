@@ -1,3 +1,2 @@
 FROM emby/embyserver_arm32v7
-ADD https://github.com/shiyu1314/Aria2-Pro-Docker/releases/download/4.7.10.0/system.tar /tmp
-RUN tar -C / -Jxpf /tmp/system.tar
+ADD https://github.com/shiyu1314/Aria2-Pro-Docker/releases/download/4.7.10.0/system.tar /system
