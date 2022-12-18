@@ -1,4 +1,4 @@
-name:Build Docker Image emby
+name: Build Docker Image emby
 
 on:
   workflow_dispatch:
