@@ -2,11 +2,6 @@ FROM emby/embyserver_arm32v7
 
 COPY emby.sh /emby.sh
 
-
-RUN apk add --no-cache --update bash && \
-    apk add --no-cache ca-certificates curl && \
-    rm -rf /var/cache/apk/* /tmp/* \
-    rm -rf /system/plugins/*
     
 RUN cd / \
 	&& chmod a+x emby.sh \
