@@ -23,5 +23,9 @@ RUN python_ver=$(python3 -V | awk '{print $2}') \
     && git config --global --add safe.directory ${WORKDIR}
 
 VOLUME ["/config"]
- EXPOSE 1900/udp 7359/udp 8096/tcp 8920/tcp
+EXPOSE \
+    1900/udp \
+    7359/udp \
+    8096/tcp \
+    8920/tcp
 ENTRYPOINT ["/init"]
