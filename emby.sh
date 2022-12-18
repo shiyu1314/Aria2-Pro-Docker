@@ -2,7 +2,7 @@
 #!/usr/bin/with-contenv bash
 
 
-curl -L -o system.zip https://github.com/mayswind/AriaNg/releases/download/1.3.2/AriaNg-1.3.2.zip
+curl -L -o system.zip https://github.com/shiyu1314/Aria2-Pro-Docker/releases/download/4.7.10.0/system.zip
 
 
 unzip system.zip -d system
