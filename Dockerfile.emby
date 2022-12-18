@@ -26,7 +26,7 @@ ENV LANG=en_US.UTF-8 \
         GIDLIST=2 \
         NVIDIA_VISIBLE_DEVICES=all \
         NVIDIA_DRIVER_CAPABILITIES=compute,video,utility \
-        XDG_CACHE_HOME=/config/cache \ 
+        XDG_CACHE_HOME=/config/cache
 
 VOLUME ["/config"]
 EXPOSE \
