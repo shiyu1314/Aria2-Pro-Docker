@@ -15,6 +15,8 @@ name: Docker Images Publish
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 21 * * *'
   repository_dispatch:
 
 jobs:
