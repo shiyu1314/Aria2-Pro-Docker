@@ -13,20 +13,21 @@
 
 FROM p3terx/s6-alpine
 
-COPY install.sh /install.sh
-
-
 RUN apk add --no-cache --update bash && \
     apk add --no-cache jq findutils && \
     apk add --no-cache ca-certificates curl && \
     apk add --update darkhttpd && \
     curl -fsSL git.io/aria2c.sh | bash && \
-    mkdir -p /AriaNg && \
-    rm -rf /var/cache/apk/* /tmp/*
+    rm -rf /var/cache/apk/* /tmp/* \
     
-RUN cd / \
-	&& chmod a+x install.sh \
-	&& bash install.sh    
+echo "**** Install AriaNg ****" && \
+ mkdir -p /AriaNg && \
+ ARIANG_RELEASE=$(curl -sX GET "https://api.github.com/repos/mayswind/AriaNg/releases/latest" \
+	| awk '/tag_name/{print $4;exit}' FS='[""]') && \
+ curl \
+	-o AriaNg.zip -L \
+	https://github.com/mayswind/AriaNg/releases/download/${ARIANG_RELEASE}/AriaNg-${ARIANG_RELEASE}.zip && \
+ unzip AriaNg.zip -d AriaNg && rm -rf AriaNg.zip
 
 COPY rootfs /
 
